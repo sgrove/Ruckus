@@ -1,7 +1,7 @@
 <a href="/pages/new">Add a new page</a>
 
 <ul>
-	<% @pages.each |p|%>
+	<% @pages.each do |p| %>
 	<li>
 		<span><%= p.title %></span>
 		<a href="/pages/<%= p.title %>/edit">Edit</a>
