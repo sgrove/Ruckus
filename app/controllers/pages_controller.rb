@@ -28,11 +28,17 @@ class PagesController < ApplicationController
   def show
     puts "Looking for page by title: #{params[:id]}"
     @page = Page.find_by_title(params[:id])
-    puts "Found: #{@page.inspect}"
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @page }
+    
+    puts @page.inspect
+    
+    
+    if @page.nil?
+      render :status => 404
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.xml  { render :xml => @page }
+      end
     end
   end
 
@@ -50,6 +56,7 @@ class PagesController < ApplicationController
   # GET /pages/1/edit
   def edit
     @page = Page.find(params[:id])
+    render :layout => 'admin'
   end
 
   # POST /pages
