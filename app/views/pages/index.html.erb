@@ -1,0 +1,12 @@
+<a href="/pages/new">Add a new page</a>
+
+<ul>
+	<% @pages.each |p|%>
+	<li>
+		<span><%= p.title %></span>
+		<a href="/pages/<%= p.title %>/edit">Edit</a>
+		<a href="/pages<%= p.title %>/delete">Delete</a>
+	</li>
+	<% end %>
+</ul>
+

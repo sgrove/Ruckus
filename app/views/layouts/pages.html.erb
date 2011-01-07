@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pluck Demo - Pluck Demo</title> 
+	<link href="/stylesheets/style.css" rel="stylesheet" type="text/css" media="screen" /> 
+	<meta name="title" content="Ruckus Demo" /> 
+  <%= csrf_meta_tag %>
+</head>
+	<body>
+		<div id="container">
+			<div id="hd"> 
+				<h2>Ruckus Demo</h2> 
+				<ul>
+				 	<% @pages.each do |p| %>
+					<li><a href="/pages/<%= p.title %>" class="act"><%=p.title %></a></li>
+					<% end %>
+				</ul> 
+			</div> 
+			<div id="ct">
+				<%= yield %>
+				<p class="notice"><%= notice %></p>
+				<p class="alert"><%= alert %></p>
+			</div>
+			<div id="ft"> 
+				<a href="login.php">admin</a> | powered by <a href="http://www.pluck-cms.org">pluck</a> 
+			</div>
+		</div>
+	</body>
+</html>
