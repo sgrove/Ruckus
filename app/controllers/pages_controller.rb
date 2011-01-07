@@ -26,7 +26,9 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
-    @page = Page.find_by_title(params[:title])
+    puts "Looking for page by title: #{params[:id]}"
+    @page = Page.find_by_title(params[:id])
+    puts "Found: #{@page.inspect}"
 
     respond_to do |format|
       format.html # show.html.erb
