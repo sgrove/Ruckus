@@ -55,7 +55,7 @@ class PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
-    @page = Page.find(params[:id])
+    @page = Page.find_by_title(params[:id])
     render :layout => 'admin'
   end
 
