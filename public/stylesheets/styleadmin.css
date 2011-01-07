@@ -41,7 +41,7 @@ position: relative;
 bottom: 8px;
 }
 .menuitem:hover {
-background-image: url(image/back_hover.jpg);
+background-image: url(/images/back_hover.jpg);
 }
 #menu2 {
 bottom: 5px;
