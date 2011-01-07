@@ -1,12 +1,52 @@
-<a href="/pages/new">Add a new page</a>
-
-<ul>
-	<% @pages.each do |p| %>
-	<li>
-		<span><%= p.title %></span>
-		<a href="/pages/<%= p.title %>/edit">Edit</a>
-		<a href="/pages<%= p.title %>/delete">Delete</a>
-	</li>
-	<% end %>
-</ul>
-
+<h2>pages</h2><p><strong>Here you can manage, edit and delete your pages.</strong></p> 
+	<div class="menudiv"> 
+		<span> 
+		<a href="/pages/new" ><img src="/images/newpage.png" alt="New Page" /></a> 
+		</span> 
+		<span> 
+			<span> 
+				<a href="/pages/new" >new page</a> 
+			</span> 
+						<br /> 
+					</span> 
+	</div>
+	<!-- 
+	<div class="menudiv"> 
+		<span> 
+			<a href="?action=images" ><img src="/images/image.png" alt="" /></a> 
+		</span>
+		<span> 
+		<span> 
+			<a href="?action=images" >manage images</a> 
+		</span>
+			<br /> 
+		</span> 
+	</div> 
+	-->
+			<% @pages.each do |p| %>
+			<div class="menudiv"> 
+				<span> 
+					<img src="/images/page.png" alt="<%= p.title %>" /> 
+				</span> 
+				<span class="title-page"><%= p.title %></span> 
+				<span> 
+					<a href="/pages/<%=h p.title  %>/edit"><img src="/images/edit.png" title="edit page" alt="edit page" /></a> 
+				</span> 
+				<!--
+				<span> 
+					<a href="?editmeta=kop1.php"><img src="/images/siteinformation.png" title="edit page information" alt="edit page information" /></a> 
+				</span> 
+				-->
+				<!--
+				<span> 
+					<a href="?pageup=kop1.php"><img src="/images/up.png" title="change page order" alt="change page order" /></a> 
+				</span> 
+				<span> 
+					<a href="?pagedown=kop1.php"><img src="/images/down.png" title="change page order" alt="change page order" /></a> 
+				</span> 
+				-->
+				<span> 
+					<a href="/pages/<%=h p.title %>/delete"><img src="/images/delete.png" title="move item to trashcan" alt="move item to trashcan" /></a> 
+				</span> 
+			</div>
+			<% end %>

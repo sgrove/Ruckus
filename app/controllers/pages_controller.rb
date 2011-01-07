@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   
   def index
       respond_to do |format|
-        format.html #
+        format.html {render :layout => 'admin'}
         format.xml  { render :xml => @pages }
       end
   end
@@ -42,7 +42,7 @@ class PagesController < ApplicationController
     @page = Page.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html {render :layout => 'admin'}
       format.xml  { render :xml => @page }
     end
   end
